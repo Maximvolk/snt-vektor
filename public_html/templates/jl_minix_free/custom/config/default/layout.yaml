@@ -51,7 +51,7 @@ structure:
 content:
   logo-7657:
     attributes:
-      image: 'gantry-media://logo.png'
+      image: 'gantry-media://logo/logo.png'
   menu-5263:
     attributes:
       mobileTarget: '1'
@@ -67,7 +67,7 @@ content:
   custom-1567:
     title: Link
     attributes:
-      html: "<div class=\"links-list\">\n  <ul>\n    <li><a href=\"#\">Главная</a></li>\n    <li><a href=\"#\">Информация</a></li>\n    <li><a href=\"#\">Документы</a></li>\n    <li><a href=\"#\">Контакты</a></li>\n  </ul>  \n</div>\n"
+      html: "<div class=\"links-list\">\n  <ul>\n    <li><a href=\"/\">Главная</a></li>\n    <li><a href=\"/index.php/info\">Информация</a></li>\n    <li><a href=\"/index.php/docs\">Документы</a></li>\n    <li><a href=\"/index.php/contacts\">Контакты</a></li>\n  </ul>  \n</div>\n"
   custom-4939:
     title: Social
     attributes:
