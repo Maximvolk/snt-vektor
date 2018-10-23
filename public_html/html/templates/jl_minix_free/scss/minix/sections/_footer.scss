@@ -1,0 +1,13 @@
+#g-footer {
+    color: $footer-text-color;
+    background: $footer-background;
+    padding-top: $section-padding;
+
+}
+
+@media print {
+    #g-footer  {
+        background: #fff !important;
+        color: #000 !important;
+    }
+}

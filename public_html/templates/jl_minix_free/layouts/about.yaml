@@ -1,0 +1,83 @@
+version: 2
+preset:
+  image: 'gantry-admin://images/layouts/home.png'
+  name: about
+  timestamp: 1503516715
+layout:
+  /navigation/:
+    -
+      - 'logo-7657 25'
+      - 'menu-5263 75'
+  /container-main/:
+    -
+      -
+        'sidebar 14': {  }
+      -
+        'mainbar 72':
+          -
+            - system-messages-4126
+          -
+            - system-content-1246
+      -
+        'aside 14': {  }
+  /footer/:
+    -
+      - 'branding-4929 30'
+      - 'custom-2130 25'
+      - 'custom-1567 30'
+      - 'custom-4939 15'
+    -
+      - custom-9603
+  offcanvas: {  }
+structure:
+  navigation:
+    type: section
+    attributes:
+      boxed: ''
+      class: section-horizontal-paddings
+  sidebar:
+    type: section
+  mainbar:
+    type: section
+  container-main:
+    attributes:
+      boxed: ''
+      class: section-horizontal-paddings
+      extra: {  }
+  footer:
+    attributes:
+      boxed: ''
+      class: section-horizontal-paddings
+  offcanvas:
+    inherit:
+      outline: default
+      include:
+        - attributes
+        - children
+content:
+  logo-7657:
+    attributes:
+      image: 'gantry-media://logo/logo-white.png'
+  menu-5263:
+    block:
+      variations: align-right
+  branding-4929:
+    attributes:
+      content: "<h2>Minix Design.inc </h2>\n&copy; 2017 by <a href=\"http://joomlead.com/\" title=\"JoomLead\" class=\"g-powered-by\">JoomLead</a>. All rights reserved."
+  custom-2130:
+    title: 'Contact Info'
+    attributes:
+      html: "<div class=\"contact-ft\">\n  <div class=\"ct-mail\">\n    <a href=\"https://joomlead.com/\">demo@joomlead.com</a>\n  </div>\n  <div class=\"phone\">\n    +8 123 456 789\n  </div>\n</div>\n"
+  custom-1567:
+    title: Link
+    attributes:
+      html: "<div class=\"links-list\">\n  <ul>\n    <li><a href=\"#\">Projects</a></li>\n    <li><a href=\"#\">About</a></li>\n    <li><a href=\"#\">Services</a></li>\n    <li><a href=\"#\">Career</a></li>\n  </ul>\n  <ul>\n    <li><a href=\"#\">News</a></li>\n    <li><a href=\"#\">Events</a></li>\n    <li><a href=\"#\">Contact</a></li>\n    <li><a href=\"#\">Legals</a></li>\n  </ul>\n</div>\n"
+  custom-4939:
+    title: Social
+    attributes:
+      html: "<div class=\"links-list\">\n  <ul>\n    <li><a href=\"#\">Facebook</a></li>\n    <li><a href=\"#\">Twitter</a></li>\n    <li><a href=\"#\">Instagram</a></li>\n    <li><a href=\"#\">Dribbble</a></li>\n  </ul>\n</div>\n"
+  custom-9603:
+    title: 'Custom HTML'
+    attributes:
+      html: "  <script>\n  jQuery(function($){\n    $(window).on('scroll', function() {\n      var scrollTop = $(this).scrollTop();\n      if (scrollTop < 10) {\n        $('.g-logo img').attr(\"src\",\"{{ url('gantry-media://logo/logo-white.png') }}\");\n      }\n      if (scrollTop >= 10) {\n        $('.g-logo img').attr(\"src\",\"{{ url('gantry-media://logo/logo.png') }}\");\n      }\n    });\n  });\n  </script>\n"
+      twig: '1'

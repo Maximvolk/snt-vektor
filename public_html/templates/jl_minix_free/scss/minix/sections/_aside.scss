@@ -1,0 +1,12 @@
+#g-aside {
+    color: $main-text-color;
+    background: $main-background;
+    border-radius: $border-radius;
+}
+
+@media print {
+    #g-aside {
+        background: #fff !important;
+        color: #000 !important;
+    }
+}

@@ -1,0 +1,4 @@
+enabled: '1'
+content: '&copy; 2017 by <a href="http://joomlead.com/" title="JoomLead" class="g-powered-by">JoomLead</a>. All rights reserved.'
+css:
+  class: ''

@@ -1,0 +1,15 @@
+.g-branding {
+    font-size: 13px;
+    text-align: left;
+    color: #5f5f5f;
+    h2{
+      font-size: 1rem;
+      color: #fff;
+    }
+    a{
+      color: $accent-color-2;
+    }
+    .dir-rtl & {
+        text-align: left;
+    }
+}

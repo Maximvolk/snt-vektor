@@ -1,0 +1,8 @@
+a {
+    color: $accent-color-1;
+    @include transition(all 0.2s);
+
+    &:hover {
+        color: inherit;
+    }
+}

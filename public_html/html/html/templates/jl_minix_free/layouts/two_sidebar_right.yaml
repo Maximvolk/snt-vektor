@@ -1,0 +1,97 @@
+version: 2
+preset:
+  image: 'gantry-admin://images/layouts/default.png'
+  name: two_sidebar_right
+  timestamp: 1503512468
+layout:
+  navigation: {  }
+  /breadcrumbs/:
+    -
+      - position-position-2755
+  /container-main/:
+    -
+      -
+        'mainbar 60':
+          -
+            - custom-3887
+      -
+        'sidebar 20':
+          -
+            - custom-5134
+          -
+            - custom-5456
+      -
+        'aside 20':
+          -
+            - custom-4109
+          -
+            - custom-8916
+  footer: {  }
+  offcanvas: {  }
+structure:
+  navigation:
+    type: section
+    inherit:
+      outline: default
+      include:
+        - attributes
+        - children
+  breadcrumbs:
+    type: section
+    attributes:
+      boxed: ''
+      class: section-horizontal-paddings
+  mainbar:
+    type: section
+  sidebar:
+    type: section
+  container-main:
+    attributes:
+      boxed: ''
+      class: 'section-horizontal-paddings section-vertical-paddings'
+      extra: {  }
+  footer:
+    inherit:
+      outline: default
+      include:
+        - attributes
+        - children
+  offcanvas:
+    inherit:
+      outline: default
+      include:
+        - children
+        - attributes
+content:
+  position-position-2755:
+    title: Breadcrumb
+    attributes:
+      key: breadcrumb
+  custom-3887:
+    title: Content
+    attributes:
+      html: "<p>Nullam eget neque. Nullam <a href=\"#\">imperdiet venenatis</a> ligula. Integer a leo. Nunc consectetur. Maecenas sem. Proin vulputate, massa vel volutpat laoreet, purus erat pretium ligula, eget varius arcu nibh sed libero. Fusce ante. Nullam interdum aliquet metus. Ut ultrices vestibulum tellus. Praesent quis erat. Nam id turpis sit amet neque cursus luctus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Quisque id tortor. In vitae sapien. Nunc quis tellus. </p>\n\n<h3 style=\"display: inline-block;\">H3 Heading</h3>\n<p>In erat. Pellentesque erat. <strong>Mauris vehicula vestibulum justo.</strong> Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla pulvinar est. Integer urna. Pellentesque pulvinar dui a magna. Nulla facilisi.</p>\n\n<h4>H4 Heading</h4>\n<p>Mauris lobortis. Aliquam lacinia purus. <strong>Pellentesque magna</strong>. Mauris euismod metus nec tortor. Phasellus elementum, quam a euismod imperdiet, ligula felis faucibus enim, eu malesuada nunc felis sed turpis. <a href=\"#\">Morbi convallis luctus tortor</a>. Integer bibendum lacinia velit. Suspendisse mi lorem, porttitor ut, interdum et, lobortis a, lectus. Phasellus vitae est at massa luctus iaculis. In tincidunt.</p>"
+  custom-5134:
+    title: 'Right Sidebar'
+    attributes:
+      html: "<h3>Right Sidebar</h3>\n<p class=\"nomarginbottom\"> A right column layout example. The sidebar is independent from the Mainbody so can have multiple rows and columns, separate from the Mainbody area.</p>"
+    block:
+      variations: box1
+  custom-5456:
+    title: Lipsum
+    attributes:
+      html: '<p>Nullam eget neque. Nullam <a href="#">imperdiet venenatis</a> ligula. Integer a leo. Nunc consectetur. Maecenas sem. Proin vulputate, massa vel volutpat laoreet, purus erat pretium ligula, eget varius arcu nibh sed libero. Fusce ante. Nullam interdum aliquet metus. Ut ultrices vestibulum tellus. Praesent quis erat. Nam id turpis sit amet neque cursus luctus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>'
+    block:
+      variations: box3
+  custom-4109:
+    title: Lipsum
+    attributes:
+      html: '<p>Nullam eget neque. Nullam <a href="#">imperdiet venenatis</a> ligula. Integer a leo. Nunc consectetur. Maecenas sem. Proin vulputate, massa vel volutpat laoreet, purus erat pretium ligula, eget varius arcu nibh sed libero. Fusce ante. Nullam interdum aliquet metus. Ut ultrices vestibulum tellus. Praesent quis erat. Nam id turpis sit amet neque cursus luctus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>'
+    block:
+      variations: box3
+  custom-8916:
+    title: 'Flexible Layouts'
+    attributes:
+      html: "<h3>Flexible Layouts</h3>\n<p>Gantry 5 benefits from a flexible and intuitive, drag &amp; drop layout manager. You can add as many rows and blocks to each section as you desire, and configure their distance to intervals of 1%.</p>"
+    block:
+      variations: box1

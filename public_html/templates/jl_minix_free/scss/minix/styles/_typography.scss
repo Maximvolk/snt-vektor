@@ -1,0 +1,304 @@
+// Font Import
+@include import-font($font-family-default);
+@include import-font($font-family-title);
+
+body {
+	font-family: get-font-family($font-family-default);
+	font-weight: $font-weight-regular;
+}
+
+h1, h2, h3, h4, h5 {
+	font-family: get-font-family($font-family-title);
+	font-weight: $font-weight-medium;
+	margin: 0 0 20px 0;
+}
+
+bold, strong {
+	font-weight: $font-weight-bold;
+}
+
+.button {
+	font-weight: $font-weight-medium;
+}
+
+// Blockquote
+blockquote {
+	border-left: 10px solid $rule-color;
+	p {
+		font-size: $core-font-size + 0.1;
+		color: lighten($base-text-color, 20%);
+	}
+	cite {
+		display: block;
+		text-align: right;
+		color: $base-text-color;
+		font-size: $core-font-size + 0.2;
+	}
+}
+
+// Inline and Code
+code {
+	background: $code-bg;
+	color: darken($code-text,10%);
+}
+
+pre {
+	padding: 1rem;
+	margin: 2rem 0;
+	background: $pre-bg;
+	border: 1px solid $base-border-color;
+	border-radius: $core-border-radius;
+	line-height: 1.15;
+	font-size: $core-font-size - 0.1;
+
+	code {
+		color: $pre-text;
+		background: inherit;
+		font-size: $core-font-size - 0.1;
+	}
+}
+
+// Additional
+hr {
+	border-bottom: 4px solid $rule-color;
+}
+
+
+/* Breadcrumb */
+
+.jl-breadcrumb {
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+  padding: 0;
+  list-style: none;
+}
+
+.jl-breadcrumb > * {
+  -ms-flex: none;
+  -webkit-flex: none;
+  flex: none;
+}
+
+.jl-breadcrumb > * > * {
+  display: inline-block;
+  font-size: 0.875rem;
+  color: #fff;
+}
+.jl-breadcrumb > * > :hover,
+.jl-breadcrumb > * > :focus {
+  color: $accent-color-2;
+  text-decoration: none;
+}
+
+.jl-breadcrumb > :last-child > * {
+  color: $accent-color-2;
+}
+.jl-breadcrumb > :nth-child(n+2):not(.uk-first-column)::before {
+  content: "|";
+  display: inline-block;
+  margin: 0 20px;
+  color: #fff;
+}
+
+/*Label */
+.jl-label {
+  display: inline-block;
+  padding: 0 10px;
+  background: #1e87f0;
+  line-height: 1.5;
+  font-size: 0.875rem;
+  color: #fff;
+  vertical-align: middle;
+  white-space: nowrap;
+  border-radius: 2px;
+  text-transform: uppercase;
+}
+.jl-label-success {
+  background-color: #32d296;
+  color: #fff;
+}
+.jl-label-warning {
+  background-color: #faa05a;
+  color: #fff;
+}
+.jl-label-danger {
+  background-color: #f0506e;
+  color: #fff;
+}
+
+/* Divider */
+
+[class*='jl-divider'] {
+  border: none;
+  margin-bottom: 20px;
+}
+* + [class*='jl-divider'] {
+  margin-top: 20px;
+}
+.jl-divider-icon {
+  position: relative;
+  height: 20px;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2220%22%20height%3D%2220%22%20viewBox%3D%220%200%2020%2020%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%3Ccircle%20fill%3D%22none%22%20stroke%3D%22%23e5e5e5%22%20stroke-width%3D%222%22%20cx%3D%2210%22%20cy%3D%2210%22%20r%3D%227%22%3E%3C%2Fcircle%3E%0A%3C%2Fsvg%3E%0A");
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+}
+.jl-divider-icon::before,
+.jl-divider-icon::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  max-width: calc(50% - (50px / 2));
+  border-bottom: 1px solid #e5e5e5;
+}
+.jl-divider-icon::before {
+  right: calc(50% + (50px / 2));
+  width: 100%;
+}
+.jl-divider-icon::after {
+  left: calc(50% + (50px / 2));
+  width: 100%;
+}
+/* ========================================================================
+   Component: Tab
+ ========================================================================== */
+/*
+ * 1. Allow items to wrap into the next line
+ * 2. Gutter
+ * 3. Reset lists
+ */
+.jl-tab {
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  /* 1 */
+  -ms-flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+  /* 2 */
+  margin-left: -20px;
+  /* 3 */
+  padding: 0;
+  list-style: none;
+  position: relative;
+}
+.jl-tab::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 20px;
+  right: 0;
+  border-bottom: 1px solid #e5e5e5;
+}
+/*
+ * 1. Space is allocated solely based on content dimensions: 0 0 auto
+ * 2. Gutter
+ * 3. Create position context for dropdowns
+ */
+.jl-tab > * {
+  /* 1 */
+  -ms-flex: none;
+  -webkit-flex: none;
+  flex: none;
+  /* 2 */
+  padding-left: 20px;
+  /* 3 */
+  position: relative;
+}
+/* Items
+ ========================================================================== */
+/*
+ * Items must target `a` elements to exclude other elements (e.g. dropdowns)
+ * 1. Center text if a width is set
+ * 2. Style
+ */
+.jl-tab > * > a {
+  /* 1 */
+  display: block;
+  text-align: center;
+  /* 2 */
+  padding: 5px 10px;
+  color: #999;
+  border-bottom: 1px solid transparent;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  -webkit-transition: color 0.1s ease-in-out;
+  transition: color 0.1s ease-in-out;
+}
+/* Hover + Focus */
+.jl-tab > * > a:hover,
+.jl-tab > * > a:focus {
+  color: #666;
+  text-decoration: none;
+}
+/* Active */
+.jl-tab > .uk-active > a {
+  color: #333;
+  border-color: #1e87f0;
+}
+/* Disabled */
+.jl-tab > .uk-disabled > a {
+  color: #999;
+}
+/* Position modifier
+ ========================================================================== */
+/*
+ * Bottom
+ */
+.jl-tab-bottom::before {
+  top: 0;
+  bottom: auto;
+}
+.jl-tab-bottom > * > a {
+  border-top: 1px solid transparent;
+  border-bottom: none;
+}
+/*
+ * Left + Right
+ * 1. Reset Gutter
+ */
+.jl-tab-left,
+.jl-tab-right {
+  -ms-flex-direction: column;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+  /* 1 */
+  margin-left: 0;
+}
+/* 1 */
+.jl-tab-left > *,
+.jl-tab-right > * {
+  padding-left: 0;
+}
+.jl-tab-left::before {
+  top: 0;
+  bottom: 0;
+  left: auto;
+  right: 0;
+  border-left: 1px solid #e5e5e5;
+  border-bottom: none;
+}
+.jl-tab-right::before {
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: auto;
+  border-left: 1px solid #e5e5e5;
+  border-bottom: none;
+}
+.jl-tab-left > * > a {
+  text-align: right;
+  border-right: 1px solid transparent;
+  border-bottom: none;
+}
+.jl-tab-right > * > a {
+  text-align: left;
+  border-left: 1px solid transparent;
+  border-bottom: none;
+}
+.jl-tab .uk-dropdown {
+  margin-left: 30px;
+}

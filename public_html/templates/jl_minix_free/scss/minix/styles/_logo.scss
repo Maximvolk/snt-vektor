@@ -1,0 +1,22 @@
+.g-logo {
+    color: fadeout($black, 0.2);
+    font-weight: $font-weight-regular;
+    font-size: $core-font-size + 0.75;
+    line-height: $core-line-height;
+    box-shadow: none !important;
+    text-transform: uppercase;
+
+    @include breakpoint(mobile-only) {
+        text-align: center;
+        display: block;
+        position: relative;
+        z-index: 1;
+    }
+
+    img {
+        .dir-rtl & {
+            padding-right: 0;
+            padding-left: 1rem;
+        }
+    }
+}

@@ -1,0 +1,27 @@
+#g-container-showcase {
+    .tagspopular {
+        ul {
+            li{
+                display: inline-block;
+                list-style-type: none;
+                background: lighten(adjust-hue($accent-color-2, 6%), 10%);
+                padding: 0.4rem 0.8rem;
+                box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+                border-radius: 30px;
+                font-size: $core-font-size - 0.05;
+                font-family: get-font-family($font-family-title); 
+                font-weight: $font-weight-bold;
+                color: $base-background;
+                margin-bottom: $content-margin - 0.2;
+                margin-right: $content-margin - 0.2;
+                @include transition(background 0.25s);
+                a {
+                    color: $base-background;
+                }
+                &:hover {
+                    background: lighten(adjust-hue($accent-color-2, 6%), 7%);
+                }
+            }
+        }
+    }
+}

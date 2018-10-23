@@ -1,0 +1,15 @@
+# version for docker-machine
+version: '3'
+services:
+  mysql:
+    image: "mysql:5.7"
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    container_name: snt-vector_joomla_mysql_1
+    environment:
+      MYSQL_ROOT_PASSWORD: service
+      MYSQL_DATABASE: a0236142_app_joomla_0
+    ports:
+      - "3306:3306"
+    volumes:
+      - "/Users/max/Sites/snt-vektor.ru/backup:/backup"

@@ -1,0 +1,455 @@
+%item-container {
+    padding: $content-margin $content-margin;
+    font-family: get-font-family($font-family-title);
+    font-size: 0.875rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    white-space: normal;
+    @include word-wrap(break-word);
+    @include transition(0.35s ease);
+    @include breakpoint(tablet-range) {
+        font-size: 0.8rem;
+    }
+}
+
+%dropdown-column {
+    width: $menu-col-width;
+    float: left;
+    margin-left: 10px !important;
+}
+
+// Main Nav
+.g-main-nav {
+    z-index: 20;
+    .dir-rtl & {
+        text-align: left;
+    }
+
+    .g-standard {
+        .g-dropdown {
+            @extend %dropdown-column;
+        }
+    }
+
+    .g-toplevel {
+        > li {
+            > .g-menu-item-container {
+                color: $menustyle-text-color;
+                line-height: 40px;
+                @extend %item-container;
+
+                @include breakpoint(tablet-range) {
+                    padding: $content-margin 0.25rem;
+                }
+            }
+
+            &.g-parent {
+                > .g-menu-item-container {
+                    &:after {
+                        margin-left: -13px;
+
+                        .dir-rtl & {
+                            margin-left: 7px;
+                        }
+                    }
+                }
+            }
+
+            &:hover, &.active {
+                > .g-menu-item-container {
+                    color: $menustyle-text-color-active;
+                }
+            }
+            &:hover{
+                > .g-menu-item-container {
+                    color: #0e0e0e;
+                }
+            }
+            > .g-menu-item-container {
+                > .g-menu-item-content {
+                    word-break: normal;
+                    line-height: normal;
+                }
+
+                .g-menu-parent-indicator {
+                    &:after {
+                        content: "\f107";
+                        opacity: 1;
+                    }
+                }
+            }
+
+            &.g-parent.g-selected {
+                > .g-menu-item-container {
+                    .g-menu-parent-indicator {
+                        &:after {
+                            content: "\f107";
+                        }
+                    }
+                }
+            }
+
+            &.g-parent .g-menu-parent-indicator:after {
+                width: 1rem;
+                height: 1rem;
+
+                .dir-rtl & {
+                    text-align: left;
+                }
+            }
+        }
+
+        i {
+            opacity: 0.6;
+        }
+    }
+
+    .g-standard > .g-dropdown, .g-fullwidth > .g-dropdown {
+        &.g-dropdown-right {
+            left: 0;
+            .dir-rtl & {
+                right: $content-margin + 0.3;
+                left: auto;
+            }
+        }
+
+        &.g-dropdown-left {
+            right: $content-margin + 0.3;
+
+            .dir-rtl & {
+                left: $content-margin + 0.3;
+                right: auto;
+            }
+        }
+
+        .g-dropdown {
+            top: -10px;
+        }
+    }
+
+    .g-standard .g-dropdown, .g-fullwidth .g-dropdown {
+        &:after {
+            left: -21px !important;
+        }
+    }
+
+    .g-dropdown {
+        background: $menustyle-sublevel-background;
+        text-align: left;
+        .dir-rtl & {
+            text-align: right;
+        }
+    }
+
+    .g-sublevel {
+        padding: 0;
+        > li {
+            margin: ($content-margin / 3) ($content-margin);
+            padding: 0;
+            + li{
+              margin-top: $content-margin;
+            }
+            &:last-child{
+              margin-bottom: $content-margin;
+            }
+
+            > .g-menu-item-container {
+                line-height: normal;
+                color: $menustyle-sublevel-text-color;
+                text-transform: capitalize;
+                @extend %item-container;
+
+                > .g-menu-item-content {
+                    display: block;
+                    vertical-align: top;
+                    word-break: normal;
+                    line-height: $core-line-height - 0.4;
+                }
+            }
+
+            &:hover, &.active {
+                > .g-menu-item-container {
+                    color: $menustyle-sublevel-text-color-active;
+                }
+            }
+
+            &:last-child {
+                > .g-menu-item-container {
+                    border-color: transparent;
+                }
+            }
+
+            &.g-parent {
+                .g-menu-parent-indicator {
+                    right: 0.5rem;
+                    top: 0;
+
+                    &:after {
+                        content: "\f105";
+                        opacity: 0.5;
+                        position: relative;
+                        top: 0.5rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Subtitle
+.g-menu-item-subtitle {
+    opacity: 0.7;
+}
+
+// Preset Thumbnails
+.g-preset-thumbnails {
+    margin-top: $content-margin;
+
+    .g-content {
+        padding: $content-padding - 1.5 !important;
+        margin: 0;
+    }
+
+    .g-block {
+        @include flex(1 1 auto !important);
+    }
+
+    span {
+        padding: $content-margin + 0.3 0;
+        display: inline-block;
+    }
+
+    img {
+        border-radius: 3px;
+        margin-bottom: 0 !important;
+    }
+}
+
+// Dropdown Side Offsets
+@include dropdown-offset-x(17px, left);
+
+// Dropdown Top Offsets
+@include dropdown-offset-y(10px);
+
+// Nav Overlay
+.g-menu-overlay.g-menu-overlay-open {
+    z-index: 19;
+    display: none;
+
+    @include breakpoint(mobile-only) {
+        display: block;
+    }
+}
+
+// Touch Device
+.g-menu-hastouch {
+    .g-standard, .g-fullwidth {
+        .g-toplevel {
+            > li {
+                &.g-menu-item-link-parent {
+                    > .g-menu-item-container {
+                        > .g-menu-parent-indicator {
+                            border-radius: $core-border-radius;
+                            margin: -0.2rem 0 -0.2rem 0.5rem;
+                            padding: 0.2rem;
+                        }
+                    }
+                }
+            }
+        }
+
+        .g-sublevel {
+            > li {
+                &.g-menu-item-link-parent {
+                    > .g-menu-item-container {
+                        > .g-menu-parent-indicator {
+                            border-radius: $border-radius;
+                            padding: 0.1rem;
+                            margin-top: -0.1rem;
+                            margin-right: -0.1rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Dropdown Animation
+.g-main-nav {
+    .g-standard {
+        .g-dropdown {
+            @include transition(none);
+        }
+
+        .g-fade.g-dropdown {
+            @include transition(opacity .3s ease-out, transform .3s ease-out);
+        }
+
+        .g-zoom.g-active {
+            @include animation-duration(.3s);
+            @include animation-name(g-dropdown-zoom);
+        }
+
+        .g-fade-in-up.g-active {
+            @include animation-duration(.3s);
+            @include animation-name(g-dropdown-fade-in-up);
+        }
+
+        .g-dropdown-bounce-in-left.g-active {
+            @include animation-duration(.5s);
+            @include animation-name(g-dropdown-bounce-in-left);
+        }
+
+        .g-dropdown-bounce-in-right.g-active {
+            @include animation-duration(.5s);
+            @include animation-name(g-dropdown-bounce-in-right);
+        }
+
+        .g-dropdown-bounce-in-down.g-active {
+            @include animation-duration(.5s);
+            @include animation-name(g-dropdown-bounce-in-down);
+        }
+    }
+
+    .g-fullwidth > {
+        .g-dropdown {
+            @include transition(none);
+        }
+
+        .g-fade.g-dropdown {
+            @include transition(opacity .3s ease-out, transform .3s ease-out);
+        }
+
+        .g-zoom.g-active {
+            @include animation-duration(.3s);
+            @include animation-name(g-dropdown-zoom);
+        }
+
+        .g-fade-in-up.g-active {
+            @include animation-duration(.3s);
+            @include animation-name(g-dropdown-fade-in-up);
+        }
+
+        .g-dropdown-bounce-in-left.g-active {
+            @include animation-duration(.5s);
+            @include animation-name(g-dropdown-bounce-in-left);
+        }
+
+        .g-dropdown-bounce-in-right.g-active {
+            @include animation-duration(.5s);
+            @include animation-name(g-dropdown-bounce-in-right);
+        }
+
+        .g-dropdown-bounce-in-down.g-active {
+            @include animation-duration(.5s);
+            @include animation-name(g-dropdown-bounce-in-down);
+        }
+    }
+}
+
+@include keyframes(g-dropdown-zoom) {
+    0% {
+        opacity: 0;
+        @include transform(scale3d(.8, .8, .8));
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@include keyframes(g-dropdown-fade-in-up) {
+    0% {
+        opacity: 0;
+        @include transform(translate3d(0, 30px, 0));
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@include keyframes(g-dropdown-bounce-in-left) {
+    from, 60%, 75%, 90%, to {
+        animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+    }
+
+    0% {
+        opacity: 0;
+        @include transform(translate3d(-50px, 0, 0));
+    }
+
+    60% {
+        opacity: 1;
+        @include transform(translate3d(25px, 0, 0));
+    }
+
+    75% {
+        @include transform(translate3d(-10px, 0, 0));
+    }
+
+    90% {
+        @include transform(translate3d(5px, 0, 0));
+    }
+
+    to {
+        @include transform(none);
+    }
+}
+
+@include keyframes(g-dropdown-bounce-in-down) {
+    from, 60%, 75%, 90%, to {
+        animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+    }
+
+    0% {
+        opacity: 0;
+        @include transform(translate3d(0, -50px, 0));
+    }
+
+    60% {
+        opacity: 1;
+        @include transform(translate3d(0, 25px, 0));
+    }
+
+    75% {
+        @include transform(translate3d(0, -10px, 0));
+    }
+
+    90% {
+        @include transform(translate3d(0, 5px, 0));
+    }
+
+    to {
+        @include transform(none);
+    }
+}
+
+@include keyframes(g-dropdown-bounce-in-right) {
+    from, 60%, 75%, 90%, to {
+        animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+    }
+
+    from {
+        opacity: 0;
+        @include transform(translate3d(50px, 0, 0));
+    }
+
+    60% {
+        opacity: 1;
+        @include transform(translate3d(-25px, 0, 0));
+    }
+
+    75% {
+        @include transform(translate3d(10px, 0, 0));
+    }
+
+    90% {
+        @include transform(translate3d(-5px, 0, 0));
+    }
+
+    to {
+        @include transform(none);
+    }
+}

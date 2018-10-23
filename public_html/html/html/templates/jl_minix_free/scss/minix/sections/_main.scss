@@ -1,0 +1,16 @@
+#g-container-main {
+    background: $main-background;
+    color: $main-text-color;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+}
+
+@media print {
+    #g-mainbar {
+        background: #fff !important;
+        color: #000 !important;
+    }
+}

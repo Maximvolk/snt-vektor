@@ -1,0 +1,157 @@
+//JoomLead 2015 - 2017
+.view-page{
+  #g-mainbar{
+    .g-content{
+      padding: 0 $content-padding;
+      margin: 0 $content-margin;
+    }
+  }
+}
+.is-sticky {
+  #g-navigation {
+    .g-offcanvas-toggle {
+      top: 1.4rem;
+    }
+  }
+}
+.g-about{
+  .is-sticky{
+    #g-navigation{
+      background: #fff;
+      @include transition(background 0.5s);
+      .g-main-nav .g-toplevel > li> .g-menu-item-container{
+        color: #5f5f5f;
+      }
+    }
+  }
+}
+
+
+.g-about{
+  #g-navigation{
+    background: transparent;
+    @include transition(background 0.5s);
+    z-index: 999;
+    .g-main-nav .g-toplevel > li> .g-menu-item-container{
+      color: #fff;
+    }
+    .g-main-nav .g-toplevel > li.active> .g-menu-item-container{
+      color: $accent-color-2;
+    }
+    .g-main-nav .g-toplevel > li:hover > .g-menu-item-container{
+      color: $accent-color-2;
+    }
+  }
+}
+
+#g-footer {
+  .g-branding {
+    font-size: 1rem;
+  }
+}
+
+.platform-content{
+  .items-row{
+    .span6{
+      .item{
+        margin-bottom: 2rem;
+        padding: 1.5rem;
+        background: #fff;
+        .page-header{
+          h2{
+            margin: 0;
+            text-transform: uppercase;
+            color: #464646;
+            font-weight: 600;
+            font-size: 20px;
+          }
+        }
+        .tags{
+          li{
+            padding-left: 0;
+            a{
+              background: $accent-color-2;
+            }
+          }
+        }
+        p{
+          font-weight: 300;
+        }
+      }
+    }
+  }
+}
+
+.platform-content{
+  .span12{
+    .item-page{
+      margin-bottom: 2rem;
+      padding: 1.5rem;
+      background: #fff;
+      .page-header{
+        h2{
+          text-transform: uppercase;
+          color: #464646;
+          font-weight: 600;
+          font-size: 20px;
+        }
+      }
+      .tags{
+        li{
+          padding-left: 0;
+          a{
+            background: $accent-color-2;
+          }
+        }
+      }
+      p{
+        font-weight: 300;
+      }
+    }
+  }
+}
+
+// Footer
+#g-footer{
+  .contact-ft{
+    color: #bcbcbc;
+    font-size: 0.975rem;
+    a{
+      color: #bcbcbc;
+      font-size: 0.975rem;
+      &:hover{
+        text-decoration: underline;
+      }
+    }
+  }
+  .links-list{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    ul+ul {
+      margin-left: 50px;
+    }
+    ul{
+      li{
+        list-style-type: none;
+        a{
+          color: #bcbcbc;
+          font-size: 0.975rem;
+          &:hover{
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+}
+
+.back-to-top{
+  background: $accent-color-2 !important;
+  &:hover{
+    background: $accent-color-1 !important;
+    i{
+      color: #fff;
+    }
+  }
+}

@@ -1,0 +1,15 @@
+#g-breadcrumbs {
+    position: relative;
+    color: $breadcrumbs-text-color;
+    background: $breadcrumbs-background;
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+}
+
+@media print {
+    #g-breadcrumbs {
+        background: #fff !important;
+        color: #000 !important;
+    }
+}

@@ -1,0 +1,48 @@
+.g-offline {
+    h1 {
+        font-weight: $font-weight-light;
+    }
+
+    .g-loginform {
+        #g-loginform {
+            width: 50%;
+            margin: 0 auto;
+            @include breakpoint(mobile-only) {
+              width: 80%;
+            }
+
+            fieldset {
+                text-align: left;
+            }
+            label {
+                margin-bottom: $content-margin;
+                display: block;
+            }
+        }
+    }
+
+    #frame {
+        #form-login {
+            width: 50%;
+            margin: 0 auto;
+            @include breakpoint(mobile-only) {
+              width: 80%;
+            }
+
+            fieldset {
+                text-align: left;
+            }
+            label {
+                display: block;
+                margin-bottom: $content-margin;
+            }
+        }
+    }
+}
+.outline-_offline {
+  #g-footer {
+    .g-content {
+      text-align: initial;
+    }
+  }
+}

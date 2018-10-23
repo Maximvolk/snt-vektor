@@ -1,0 +1,42 @@
+body {
+    color: $base-text-color;
+    background: $base-background;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    #g-page-surround {
+        background: $pagesurround-background;
+        overflow: hidden;
+
+        .g-bodyonly & {
+            color: $base-text-color;
+            background: $base-background;
+        }
+    }
+
+    p {
+        margin: 0 0 1.3rem 0;
+    }
+
+    span.para {
+        display: block;
+        margin: 1rem 0;
+    }
+
+    &.dir-rtl {
+        .align-left {
+            text-align: right !important;
+        }
+
+        .align-right {
+            text-align: left !important;
+        }
+    }
+}
+
+@media print {
+    #g-page-surround {
+        background: #fff !important;
+        color: #000 !important;
+    }
+}

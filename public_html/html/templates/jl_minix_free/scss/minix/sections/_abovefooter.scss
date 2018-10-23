@@ -1,0 +1,14 @@
+#g-abovefooter {
+    color: $abovefooter-text-color;
+    background: $abovefooter-background;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+
+@media print {
+    #g-abovefooter {
+        background: #fff !important;
+        color: #000 !important;
+    }
+}

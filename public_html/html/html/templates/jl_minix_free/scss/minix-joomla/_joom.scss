@@ -1,0 +1,131 @@
+.article-info {
+  .article-info-term {
+    display: none;
+  }
+  dd {
+    display: inline-block;
+    margin-left: 0;
+    margin-right: 10px;
+    white-space: nowrap;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    strong {
+      font-weight: bold;
+    }
+  }
+}
+//BLog
+.label-info[href], .badge-info[href] {
+  background-color: $accent-color-1 !important;
+}
+
+.layout-blog, .view-featured, .view-category {
+  .item, .items-leading, .category-list {
+    background: #fff;
+    margin-bottom: 2rem;
+    h2.item-title {
+      padding: 0;
+      margin: 0;
+    }
+    .article-info.muted {
+      padding-top: .25rem;
+      padding-bottom: .75rem;
+      margin: 0;
+    }
+  }
+}
+.view-category .page-header {
+  h2 {
+    margin: 0.75rem 0 0 0;
+    font-size: 1.475rem;
+  }
+}
+.tag-category {
+  h2 {
+    border-bottom: 1px solid #e6eaf0;
+    font-weight: $font-weight-regular;
+    line-height: 1.0;
+    padding: 0 0 1.5rem/2 0;
+    text-transform: none;
+    position: relative;
+    &::before {
+      background: $accent-color-1;
+      bottom: -2px;
+      content: "";
+      height: 3px;
+      left: 0;
+      position: absolute;
+      width: 50px;
+    }
+  }
+  ul.category li, .list-striped, .row-striped {
+    background: rgba(0,0,0,0);
+    border-top: none;
+    border-bottom: none;
+  }
+}
+h2.item-title {
+  font-size: 1.5rem;
+}
+
+// Popular Tags
+.tagspopular {
+  ul {
+    display: block;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    overflow: hidden;
+  }
+
+  ul > li {
+    display: inline-block;
+    margin: 0 5px 5px 0;
+  }
+
+  ul > li > a {
+    border-radius: 2px;
+    display: block;
+    padding: 5px 10px;
+    color: #fff;
+    background: $accent-color-2;
+    @include transition(all 0.4s ease-in-out);
+    text-transform: uppercase;
+    &:hover,
+    &:focus,
+    &:active {
+      background: $accent-color-1;
+      color: $white;
+      text-decoration: none;
+    }
+  }
+}
+ul.pagination li > a {
+  margin-right: 10px;
+  font-weight: 700;
+  color: #909498;
+  border: transparent;
+}
+.pagination>li:first-child>a {
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+}
+.pagination>li:last-child>a {
+  border-bottom-right-radius: 0;
+  border-top-right-radius: 0;
+}
+.pagination>li>a:hover {
+  color: $accent-color-1 !important;
+}
+.pagination>.active>a {
+  background-color: #fff !important;
+  border-color: transparent !important;
+}
+.pagination ul {
+    padding-left: 0;
+    box-shadow: none;
+}
+
+.jl-breadcrumb {
+  margin-bottom: 0;
+}

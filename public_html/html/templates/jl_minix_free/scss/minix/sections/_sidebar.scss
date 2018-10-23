@@ -1,0 +1,11 @@
+#g-sidebar {
+    background: $main-background;
+    color: $main-text-color;
+}
+
+@media print {
+    #g-sidebar{
+        background: #fff !important;
+        color: #000 !important;
+    }
+}

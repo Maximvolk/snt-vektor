@@ -1,0 +1,36 @@
+{% extends '@nucleus/partials/particle.html.twig' %}
+
+{% block javascript_footer %}
+  {% do gantry.load('jquery') %}
+  <script>
+  jQuery(function($) {
+    var a = document.createElement('a');
+    a.className += 'back-to-top';
+    a.title = 'Back to top';
+    a.innerHTML = '{% if particle.icon %}<i class="{{particle.icon}}"></i> {% else %} &uarr; {% endif %}';
+
+    document.getElementsByTagName('body')[0].appendChild(a);
+      if ($('.back-to-top').length) {
+          var scrollTrigger = 100, // px
+              backToTop = function() {
+                  var scrollTop = $(window).scrollTop();
+                  if (scrollTop > scrollTrigger) {
+                      $('.back-to-top').removeClass('backHide');
+                  } else {
+                      $('.back-to-top').addClass('backHide');
+                  }
+              };
+          backToTop();
+          $(window).on('scroll', function() {
+              backToTop();
+          });
+          $('.back-to-top').on('click', function(e) {
+              e.preventDefault();
+              $('html,body').animate({
+                  scrollTop: 0
+              }, 700);
+          });
+      }
+    });
+  </script>
+{% endblock %}

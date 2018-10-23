@@ -1,0 +1,17 @@
+div.joomly-map-div {
+	position: relative;
+}
+#map-canvas {
+	width: 100%;
+	height:100%;
+}
+div.map-url{
+	position:absolute;
+	z-index:2;
+	bottom: 1%; 
+	left: 12%;
+}	
+div.map-url > a {
+	color: black;
+	font-size: 8px;
+}

@@ -1,0 +1,67 @@
+version: 2
+preset:
+  image: 'gantry-admin://images/layouts/home.png'
+  name: default
+  timestamp: 1539151380
+layout:
+  navigation: {  }
+  /container-main/:
+    -
+      -
+        'sidebar 14': {  }
+      -
+        'mainbar 72': {  }
+      -
+        'aside 14': {  }
+  footer: {  }
+  offcanvas: {  }
+structure:
+  navigation:
+    type: section
+    inherit:
+      outline: default
+      include:
+        - attributes
+        - block
+        - children
+  sidebar:
+    type: section
+    inherit:
+      outline: default
+      include:
+        - attributes
+        - block
+        - children
+  mainbar:
+    type: section
+    inherit:
+      outline: default
+      include:
+        - attributes
+        - block
+        - children
+  aside:
+    inherit:
+      outline: default
+      include:
+        - attributes
+        - block
+        - children
+  container-main:
+    attributes:
+      boxed: ''
+      class: section-horizontal-paddings
+      extra: {  }
+  footer:
+    inherit:
+      outline: default
+      include:
+        - attributes
+        - children
+  offcanvas:
+    inherit:
+      outline: default
+      include:
+        - attributes
+        - block
+        - children

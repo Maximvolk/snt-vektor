@@ -1,0 +1,12 @@
+{% extends '@nucleus/partials/particle.html.twig' %}
+
+
+{% block javascript_footer %}
+  {% do gantry.load('jquery') %}
+  <script src="{{ url('gantry-theme://js/jquery.sticky.js') }}"></script>
+  <script>
+  jQuery( document ).ready(function( $ ) {
+    $("#{{particle.id}}").sticky({ topSpacing :{{particle.spacing}},zIndex: 999  });
+  });
+  </script>
+{% endblock %}

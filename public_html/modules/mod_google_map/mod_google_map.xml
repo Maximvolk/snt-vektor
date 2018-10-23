@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension
+	type="module"
+	version="2.1"
+	client="site"
+	method="upgrade">
+	<name>Google map</name>
+	<author>Artem Yegorov</author>
+	<creationDate>June 2017</creationDate>
+	<copyright>Copyright (C) 2017 Open Source Matters. All rights reserved.</copyright>
+	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+	<authorEmail>rubacking@gmail.com</authorEmail>
+	<authorUrl>www.joomly.ru</authorUrl>
+	<version>2.05</version>
+	<description>MOD_GOOGLE_MAP_XML_DESCRIPTION</description>
+	<files>
+	<filename module="mod_google_map">mod_google_map.php</filename>
+		<folder>tmpl</folder>
+		<folder>js</folder>
+		<folder>css</folder>
+		<folder>languages</folder>
+		<folder>admin</folder>
+		<filename>helper.php</filename>
+		<filename>index.html</filename>
+		<filename>mod_google_map.xml</filename>	
+	</files>
+	<languages>
+		<language tag="en-GB">languages/en-GB.mod_google_map.ini</language>
+		<language tag="en-GB">languages/en-GB.mod_google_map.sys.ini</language>
+		<language tag="ru-RU">languages/ru-RU.mod_google_map.ini</language>
+		<language tag="ru-RU">languages/ru-RU.mod_google_map.sys.ini</language>
+		<language tag="es-ES">languages/es-ES.mod_google_map.ini</language>
+		<language tag="es-ES">languages/es-ES.mod_google_map.sys.ini</language>
+	</languages>
+	<help key="JHELP_EXTENSIONS_MODULE_MANAGER_GOOGLE_MAP" />
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+					<field
+						name="api_key"
+						type="text"
+						label="MOD_GOOGLE_MAP_API_KEY"
+						description="MOD_GOOGLE_MAP_API_KEY_DESC" />
+					<field name="note11" type="note" label="MOD_GOOGLE_MAP_API_KEY_GET" />	
+					<field
+						name="zoom"
+						type="text"
+						default="16"
+						label="MOD_GOOGLE_MAP_ZOOM"
+						description="MOD_GOOGLE_MAP_ZOOM_DESC" />
+					<field
+						name="width"
+						type="text"
+						default="600"
+						label="MOD_GOOGLE_MAP_WIDTH"
+						description="MOD_GOOGLE_MAP_WIDTH_DESC" />
+					<field
+						name="height"
+						type="text"
+						default="400"
+						label="MOD_GOOGLE_MAP_HEIGHT"
+						description="MOD_GOOGLE_MAP_HEIGHT_DESC" />
+					<field
+						name="type"
+						type="list"
+						default="google.maps.MapTypeId.ROADMAP"
+						label="MOD_CONTACTUS_MAP_TYPE"
+						description="MOD_CONTACTUS_MAP_TYPE_DESC">
+						<option
+							value="google.maps.MapTypeId.ROADMAP">MapTypeId.ROADMAP</option>
+						<option
+							value="google.maps.MapTypeId.SATELLITE">MapTypeId.SATELLITE</option>
+						<option
+							value="google.maps.MapTypeId.HYBRID">MapTypeId.HYBRID</option>
+						<option
+							value="google.maps.MapTypeId.TERRAIN">MapTypeId.TERRAIN</option>
+					</field>					
+					<field
+						name="margin"
+						type="radio"
+						class="btn-group btn-group-yesno"
+						default="auto"
+						label="MOD_GOOGLE_MAP_MARGIN"
+						description="MOD_GOOGLE_MAP_MARGIN_DESC">
+						<option
+							value="auto">MOD_GOOGLE_MAP_CENTER</option>
+						<option
+							value="none">MOD_GOOGLE_MAP_LEFT</option>
+					</field>	
+			</fieldset>
+			<fieldset name="markers-manager" label="MOD_GOOGLE_MAP_MARKERS_MANAGER" addfieldpath="/modules/mod_google_map/admin/formfield">	
+				<field  type="markers" name="marker" label="BTG_MARKERS_LABEL" description="BTG_MARKERS_DESC"/>
+			</fieldset>
+			<fieldset name="advanced">
+				<field
+					name="moduleclass_sfx"
+					type="textarea"
+					label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
+					description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC"
+					rows="3"
+				/>
+			</fieldset>
+		</fields>
+	</config>
+</extension>

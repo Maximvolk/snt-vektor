@@ -1,0 +1,22 @@
+.g-social {
+        line-height: normal;
+    a {
+        color: #fff;
+        font-size: 14px;
+        padding: 0 10px;
+        &:last-child{
+          padding-right: 0;
+        }
+        &:hover {
+            color: #fff;
+        }
+    }
+    text-align: right;
+
+    @include breakpoint(mobile-only) {
+        text-align: center;
+    }
+    @include breakpoint(tablet-range) {
+        text-align: right;
+    }
+}

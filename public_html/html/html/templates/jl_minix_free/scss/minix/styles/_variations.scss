@@ -1,0 +1,842 @@
+.title-center {
+    .g-title {
+        text-align: center;
+    }
+}
+
+.title-rounded {
+    .g-title {
+        border-radius: 2rem;
+    }
+}
+
+.title-section {
+    .g-title {
+        text-transform: uppercase;
+        font-weight: $font-weight-medium;
+        font-size: $core-font-size + 0.2;
+    }
+
+    .g-content {
+        padding: 0;
+    }
+}
+
+.title-underline {
+    .g-title {
+        padding: 0.5rem 0;
+
+        &:after {
+            border-bottom: 2px solid $rule-color;
+            position: absolute;
+            content: "";
+            left: 0;
+            width: 100%;
+            bottom: 0;
+
+            .dir-rtl & {
+                left: inherit;
+                right: 0;
+            }
+        }
+    }
+}
+
+.title-inline {
+    .g-title {
+        display: inline-block;
+        margin-bottom: $content-margin !important;
+    }
+}
+
+.title1, .title2, .title3, .title4, .title5, .title-white, .title-grey, .title-pink, .title-red, .title-purple, .title-orange, .title-blue {
+    .g-title {
+        font-size: $core-font-size + 0.2;
+        text-transform: uppercase;
+        font-family: get-font-family($font-family-default);
+        font-weight: $font-weight-regular;
+        margin: ($content-margin + 0.15) 0;;
+    }
+}
+
+.platform-content, .moduletable, .widget {
+    margin: ($content-margin) 0;
+    padding: ($content-padding) 0;
+
+    .moduletable, .widget {
+        margin: 0;
+        padding: 0
+    }
+
+    &:first-child {
+        margin-top: 0;
+        padding-top: 0;
+    }
+
+    &:last-child {
+        margin-bottom: 0;
+        padding-bottom: 0;
+    }
+}
+
+.moduletable, .widget {
+    &[class*="box"] {
+        padding: $content-padding;
+        margin: $content-margin;
+    }
+
+    &[class*="title"] {
+        .g-title {
+            margin-left: 0;
+            margin-right: 0;
+            margin-top: 0;
+        }
+    }
+}
+
+.title1 {
+    .g-title {
+        color: $accent-color-1;
+    }
+}
+
+.box1 {
+    &.moduletable,
+    &.widget,
+    &.g-outer-box,
+    > .g-content {
+        color: $white;
+        @include linear-gradient(to bottom, $accent-color-1, $accent-color-2);
+
+        p {
+            color: transparentize($white, 20%);
+        }
+
+        .g-main-nav {
+            .g-menu-item-container {
+                &:after {
+                    background: $white !important;
+                }
+            }
+        }
+    }
+
+    .g-title {
+        font-size: $core-font-size + 0.2;
+        text-transform: uppercase;
+    }
+
+    a {
+        color: inherit;
+        box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.25);
+
+        &:hover {
+            box-shadow: 0 1px 0 0 $white;
+        }
+    }
+
+    .button {
+        background: $white !important;
+        color: $accent-color-1;
+        border-color: $accent-color-1;
+        box-shadow: none;
+
+        &:hover {
+            box-shadow: none;
+            background: transparent !important;
+            border-color: $white !important;
+            color: $white;
+        }
+    }
+}
+
+.box1, .title1 {
+    .button {
+        &:hover, &:active, &:focus {
+            box-shadow: none;
+        }
+
+        &.button-3, &.button-4 {
+            color: $white !important;
+            border-color: $white;
+
+            &:hover, &:active, &:focus {
+                color: lighten($box1-background, 15%) !important;
+                border-color: lighten($box1-background, 15%);
+            }
+        }
+    }
+}
+
+.title2 {
+    .g-title {
+        color: $base-text-color;
+        border: 0 none;
+    }
+}
+
+.box2 {
+    &.moduletable,
+    &.widget,
+    &.g-outer-box,
+    > .g-content {
+        color: $white;
+        @include linear-gradient(to bottom, $accent-color-2, $accent-color-1);
+
+        p {
+            color: transparentize($white, 20%);
+        }
+    }
+
+    .g-title {
+        font-size: $core-font-size + 0.2;
+        text-transform: uppercase;
+    }
+
+    a {
+        color: inherit;
+        box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.25);
+
+        &:hover {
+            box-shadow: 0 1px 0 0 $white;
+        }
+    }
+
+    .button {
+        background: $white !important;
+        border-color: $accent-color-2;
+        color: $accent-color-2;
+        box-shadow: none;
+
+        &:hover {
+            box-shadow: none;
+            background: transparent !important;
+            border-color: $white !important;
+            color: $white;
+        }
+    }
+}
+
+.title3 {
+    .g-title {
+        color: $accent-color-2;
+    }
+}
+
+.box3 {
+    &.moduletable,
+    &.widget,
+    &.g-outer-box,
+    > .g-content {
+        border: 1px solid $accent-color-1;
+    }
+
+    .g-title {
+        font-size: $core-font-size + 0.2;
+        text-transform: uppercase;
+    }
+
+    a {
+        box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.25);
+
+        &:hover {
+            box-shadow: 0 1px 0 0 $base-text-color;
+        }
+    }
+    .button {
+        box-shadow: none;
+        &:hover {
+            box-shadow: none;
+        }
+    }
+}
+
+.title4 {
+    .g-title {
+        color: $accent-color-1;
+        border: 1px solid $accent-color-1;
+        padding: $content-margin;
+    }
+}
+
+.box4 {
+    &.moduletable,
+    &.widget,
+    &.g-outer-box,
+    > .g-content {
+        border: 2px solid $border-color-light;
+    }
+}
+
+.title5 {
+    .g-title {
+        color: $accent-color-2;
+        border: 1px solid $accent-color-2;
+        padding: $content-margin;
+    }
+}
+
+.box5 {
+    &.moduletable,
+    &.widget,
+    &.g-outer-box,
+    > .g-content {
+        color: $white;
+        @include linear-gradient(#2d2d2d, $accent-color-1);
+    }
+
+    a {
+        color: inherit;
+        box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.25);
+
+        &:hover {
+            box-shadow: 0 1px 0 0 $border-color-light;
+        }
+    }
+
+    .button {
+        color: $white !important;
+        box-shadow: none;
+
+        &:hover {
+            box-shadow: none;
+            border-color: $white;
+        }
+    }
+}
+
+.title6 {
+    .g-title, .g-simplecontent .g-simplecontent-item-content-title {
+        font-family: get-font-family($font-family-title);
+        font-weight: $font-weight-light;
+        text-transform: none;
+    }
+}
+
+.box6 {
+    &.moduletable,
+    &.widget,
+    &.g-outer-box,
+    > .g-content {
+        color: $white;
+        background: #2d2d2d;
+    }
+
+    a {
+        color: inherit;
+        box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.25);
+
+        &:hover {
+            box-shadow: 0 1px 0 0 $border-color-light;
+        }
+    }
+    .button {
+        color: $white !important;
+        box-shadow: none;
+
+        &:hover {
+            box-shadow: none;
+        }
+    }
+}
+
+.box-white {
+    color: lighten($black, 10%);
+}
+
+.box-grey, .box-pink, .box-red, .box-purple, .box-blue, .box-orange {
+    color: $white;
+}
+
+.title-white {
+    .g-title, .button, .g-simplecontent-layout-header .g-simplecontent-item-content-title, .g-simplecontent-layout-header .g-simplecontent-item-leading-content {
+        color: $box-white-background;
+    }
+    .button {
+        border-color: $box-white-background;
+    }
+}
+
+.box-white {
+    &.moduletable, &.widget,
+    &.g-outer-box,
+    > .g-content {
+        background: $box-white-background;
+    }
+
+    .button {
+        background: darken($box-white-background, 25%);
+    }
+
+    a {
+        color: darken($box-white-background, 25%);
+    }
+}
+
+.box-white, .title-white {
+    .button {
+        &:hover, &:active, &:focus {
+            background: darken($box-white-background, 10%);
+        }
+
+        &.button-3, &.button-2 {
+            color: darken($box-white-background, 25%);
+            border-color: darken($box-white-background, 25%);
+
+            &:hover, &:active, &:focus {
+                color: $black;
+                border-color: $black;
+            }
+        }
+    }
+}
+
+.title-grey {
+    .g-title {
+        color: $box-grey-background;
+    }
+
+    .button {
+        background: $white !important;
+        color: $box-grey-background;
+        border-color: $box-grey-background;
+        box-shadow: none;
+
+        &:hover {
+            box-shadow: none;
+            background: $box-grey-background !important;
+            border-color: $box-grey-background;
+            color: $white;
+        }
+    }
+}
+
+.box-grey {
+    &.moduletable, &.widget,
+    &.g-outer-box,
+    > .g-content {
+        background: $box-grey-background;
+    }
+
+    a {
+        color: lighten($box-grey-background, 25%);
+
+        &:hover {
+            color: darken($box-grey-background, 15%);
+        }
+    }
+
+    .button {
+        background: $white !important;
+        color: $box-grey-background;
+        border-color: $box-grey-background;
+        box-shadow: none;
+
+        &:hover {
+            box-shadow: none;
+            background: transparent !important;
+            border-color: $white !important;
+            color: $white;
+        }
+    }
+}
+
+.box-grey, .title-grey {
+    .button {
+        &.button-3, &.button-4 {
+            color: darken($box-grey-background, 25%);
+
+            &:hover, &:active, &:focus {
+                color: $white;
+                border-color: $white;
+            }
+        }
+    }
+}
+
+.title-pink {
+    .g-title {
+        color: $box-pink-background;
+        border: 0 none;
+    }
+
+    .button {
+        background: $white !important;
+        color: $box-pink-background;
+        border-color: $box-pink-background;
+        box-shadow: none;
+
+        &:hover {
+            box-shadow: none;
+            background: $box-pink-background !important;
+            border-color: $box-pink-background;
+            color: $white;
+        }
+    }
+}
+
+.box-pink {
+    &.moduletable, &.widget,
+    &.g-outer-box,
+    > .g-content {
+        background: $box-pink-background;
+    }
+
+    .button {
+        background: $white !important;
+        color: $box-pink-background;
+        border-color: $box-pink-background;
+        box-shadow: none;
+
+        &:hover {
+            box-shadow: none;
+            background: transparent !important;
+            border-color: $white !important;
+            color: $white;
+        }
+    }
+
+    a {
+        color: lighten($box-pink-background, 25%);
+
+        &:hover {
+            color: darken($box-pink-background, 15%);
+        }
+    }
+}
+
+.box-pink, .title-pink {
+    .button {
+        &.button-3, &.button-4 {
+            color: darken($box-pink-background, 25%);
+
+            &:hover, &:active, &:focus {
+                color: $white;
+                border-color: $white;
+            }
+        }
+    }
+}
+
+.title-red {
+    .g-title {
+        color: $box-red-background;
+        border: 0 none;
+    }
+
+    .button {
+        background: $white !important;
+        color: $box-red-background;
+        border-color: $box-red-background;
+        box-shadow: none;
+
+        &:hover {
+            box-shadow: none;
+            background: $box-red-background !important;
+            border-color: $box-red-background;
+            color: $white;
+        }
+    }
+}
+
+.box-red {
+    &.moduletable, &.widget,
+    &.g-outer-box,
+    > .g-content {
+        background: $box-red-background;
+    }
+
+    .button {
+        background: $white !important;
+        color: $box-red-background;
+        border-color: $box-red-background;
+        box-shadow: none;
+
+        &:hover {
+            box-shadow: none;
+            background: transparent !important;
+            border-color: $white !important;
+            color: $white;
+        }
+    }
+
+    a {
+        color: lighten($box-red-background, 25%);
+
+        &:hover {
+            color: darken($box-red-background, 15%);
+        }
+    }
+}
+
+.box-red, .title-red {
+    .button {
+        &.button-3, &.button-4 {
+            color: darken($box-red-background, 25%);
+
+            &:hover, &:active, &:focus {
+                color: $white;
+                border-color: $white;
+            }
+        }
+    }
+}
+
+.title-purple {
+    .g-title {
+        color: $box-purple-background;
+        border: 0 none;
+    }
+
+    .button {
+        background: $white !important;
+        color: $box-purple-background;
+        border-color: $box-purple-background;
+        box-shadow: none;
+
+        &:hover {
+            box-shadow: none;
+            background: $box-purple-background !important;
+            border-color: $box-purple-background;
+            color: $white;
+        }
+    }
+}
+
+.box-purple {
+    &.moduletable, &.widget,
+    &.g-outer-box,
+    > .g-content {
+        background: $box-purple-background;
+    }
+
+    .button {
+        background: $white !important;
+        color: $box-purple-background;
+        border-color: $box-purple-background;
+        box-shadow: none;
+
+        &:hover {
+            box-shadow: none;
+            background: transparent !important;
+            border-color: $white !important;
+            color: $white;
+        }
+    }
+
+    a {
+        color: lighten($box-purple-background, 25%);
+
+        &:hover {
+            color: darken($box-purple-background, 15%);
+        }
+    }
+}
+
+.box-purple, .title-purple {
+    .button {
+        &.button-3, &.button-4 {
+            color: darken($box-purple-background, 25%);
+
+            &:hover, &:active, &:focus {
+                color: $white;
+                border-color: $white;
+            }
+        }
+    }
+}
+
+.title-blue {
+    .g-title {
+        color: $box-blue-background;
+        border: 0 none;
+    }
+
+    .button {
+        background: $white !important;
+        color: $box-blue-background;
+        border-color: $box-blue-background;
+        box-shadow: none;
+
+        &:hover {
+            box-shadow: none;
+            background: $box-blue-background !important;
+            border-color: $box-blue-background;
+            color: $white;
+        }
+    }
+}
+
+.box-blue {
+    &.moduletable, &.widget,
+    &.g-outer-box,
+    > .g-content {
+        background: $box-blue-background;
+    }
+
+    .button {
+        background: $white !important;
+        color: $box-blue-background;
+        border-color: $box-blue-background;
+        box-shadow: none;
+
+        &:hover {
+            box-shadow: none;
+            background: transparent !important;
+            border-color: $white !important;
+            color: $white;
+        }
+    }
+
+    a {
+        color: lighten($box-blue-background, 25%);
+
+        &:hover {
+            color: darken($box-blue-background, 15%);
+        }
+    }
+}
+
+.box-blue, .title-blue {
+    .button {
+        &.button-3, &.button-4 {
+            color: darken($box-blue-background, 25%);
+
+            &:hover, &:active, &:focus {
+                color: $white;
+                border-color: $white;
+            }
+        }
+    }
+}
+
+.title-orange {
+    .g-title {
+        color: $box-orange-background;
+        border: 0 none;
+    }
+
+    .button {
+        background: $white !important;
+        color: $box-orange-background;
+        border-color: $box-orange-background;
+        box-shadow: none;
+
+        &:hover {
+            box-shadow: none;
+            background: $box-orange-background !important;
+            border-color: $box-orange-background;
+            color: $white;
+        }
+    }
+}
+
+.box-orange {
+    &.moduletable, &.widget,
+    &.g-outer-box,
+    > .g-content {
+        background: $box-orange-background;
+    }
+
+    .button {
+        background: $white !important;
+        color: $box-orange-background;
+        border-color: $box-orange-background;
+        box-shadow: none;
+
+        &:hover {
+            box-shadow: none;
+            background: transparent !important;
+            border-color: $white !important;
+            color: $white;
+        }
+    }
+
+    a {
+        color: lighten($box-orange-background, 25%);
+
+        &:hover {
+            color: darken($box-orange-background, 15%);
+        }
+    }
+}
+
+.box-orange, .title-orange {
+    .button {
+        &.button-3, &.button-4 {
+            color: darken($box-orange-background, 25%);
+
+            &:hover, &:active, &:focus {
+                color: $white;
+                border-color: $white;
+            }
+        }
+    }
+}
+
+.spaced {
+    .g-content {
+        margin: 1px;
+    }
+}
+
+.bordered {
+    .g-content {
+        border: 1px solid $rule-color;
+        margin: 1px;
+    }
+}
+
+.shadow {
+    .g-content {
+        box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+    }
+}
+
+.shadow2 {
+    .g-content {
+        box-shadow: 0 0 4px rgba(0, 0, 0, 0.15);
+    }
+}
+
+.disabled {
+    .g-content {
+        opacity: 0.4;
+    }
+}
+
+.square {
+    .g-content {
+        border-radius: none;
+    }
+}
+
+.rounded {
+    .g-content {
+        border-radius: $core-border-radius;
+        overflow: hidden;
+    }
+}
+
+.no-bg-image {
+    background-image: none !important;
+}
+
+.g-block-divider {
+    background: $rule-color;
+    height: 5px;
+    margin-top: $content-padding * 4;
+    margin-bottom: $content-padding * 4;
+}
+
+.equal-height {
+    #g-aside,
+    #g-mainbar,
+    #g-sidebar {
+        width: 100%;
+    }
+
+    .g-content {
+        width: auto;
+    }
+}

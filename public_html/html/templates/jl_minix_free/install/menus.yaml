@@ -1,0 +1,9 @@
+minix-theme:
+  title: 'Minix Theme'
+  description: 'Sample menu for Minix theme.'
+
+  items:
+    minix:
+      title: 'Home'
+      outline: home
+      home: 1

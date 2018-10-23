@@ -1,0 +1,372 @@
+%g-button {
+    display: inline-block;
+    font-family: get-font-family($font-family-title);
+    background: $accent-color-2;
+    border: 1px solid $accent-color-2;
+    color: $white;
+    font-size: $core-font-size;
+    line-height: $core-line-height - 0.275;
+    margin: 0;
+    padding: 0.65rem 1.4rem;
+    vertical-align: middle;
+    text-shadow: none;
+    outline: none;
+    @include transition(background 0.2s);
+    &:hover, &:active, &:focus {
+        color: $white;
+        background: $accent-color-1;
+        border-color: $accent-color-1;
+    }
+}
+
+.button {
+    @extend %g-button;
+
+    &.button-square {
+        border-radius: 0;
+
+        &[class*="button"] {
+            border-radius: 0;
+        }
+    }
+
+    &.button-block {
+        display: block;
+    }
+
+    &.button-xlarge {
+        font-size: $core-font-size + 0.8;
+    }
+
+    &.button-large {
+        font-size: $core-font-size + 0.6;
+    }
+
+    &.button-medium {
+        font-size: $core-font-size;
+    }
+
+    &.button-small {
+        font-size: $core-font-size - 0.2;
+    }
+
+    &.button-xsmall {
+        font-size: $core-font-size - 0.4;
+    }
+
+    &.button-alt {
+        background: $accent-color-2;
+
+        &:hover, &:active, &:focus {
+            background: darken($accent-color-2, 10%);
+        }
+
+        &.button-special {
+            &:before {
+                .dir-ltr & {
+                    border-left: 1px solid darken($accent-color-2, 8%);
+                    border-bottom: 1px solid darken($accent-color-2, 8%);
+                }
+            }
+
+            &:after {
+                .dir-rtl & {
+                    border-right: 1px solid darken($accent-color-2, 8%);
+                    border-bottom: 1px solid darken($accent-color-2, 8%);
+                }
+            }
+        }
+    }
+
+    &.button-3,
+    &.button-4,
+    &.button-grey,
+    &.button-pink,
+    &.button-red,
+    &.button-purple,
+    &.button-orange,
+    &.button-blue {
+        color: $white !important;
+
+        &.button-3, &.button-4 {
+            background: transparent;
+
+            &:hover, &:active, &:focus {
+                background: transparent;
+            }
+        }
+    }
+
+    &.button-2 {
+        background: #ff7b00;
+        border-color: #ff7b00;
+        color: $white;
+
+        &:hover, &:active, &:focus {
+            border-color: $accent-color-1;
+            background: $accent-color-1;
+        }
+    }
+
+    &.button-3 {
+        color: $accent-color-2 !important;
+        border-color: $accent-color-2;
+        background: transparent !important;
+
+        &:hover, &:active, &:focus {
+            background: $accent-color-2 !important;
+            border-color: $accent-color-2 !important;
+            color: $white !important;
+        }
+    }
+
+    &.button-4 {
+        color: $accent-color-1 !important;
+        background: $white !important;
+        border: 1px solid $accent-color-1;
+
+        &:hover, &:active, &:focus {
+            border-color: $accent-color-1;
+            background: $accent-color-1 !important;
+            color: $white !important;
+        }
+    }
+
+    &.button-grey {
+        background: $box-grey-background ;
+        border-color: $box-grey-background ;
+        color: $white;
+
+        &:hover, &:active, &:focus {
+            color: $box-grey-background  !important;
+            border-color: $box-grey-background;
+            background: transparent !important;
+        }
+
+        &.button-3, &.button-4 {
+            background: transparent !important;
+            color: $box-grey-background !important;
+            border: 1px solid $box-grey-background;
+
+            &:hover, &:active, &:focus {
+                border-color: darken($box-grey-background, 15%) !important;
+                color: darken($box-grey-background, 15%) !important;
+            }
+        }
+    }
+
+    &.button-pink {
+        background: $box-pink-background ;
+        border-color: $box-pink-background ;
+        color: $white;
+
+        &:hover, &:active, &:focus {
+            color: $box-pink-background  !important;
+            border-color: $box-pink-background;
+            background: transparent !important;
+        }
+
+        &.button-3, &.button-4 {
+            background: transparent !important;
+            color: $box-pink-background !important;
+            border: 1px solid $box-pink-background;
+
+            &:hover, &:active, &:focus {
+                border-color: darken($box-pink-background, 15%) !important;
+                color: darken($box-pink-background, 15%) !important;
+            }
+        }
+    }
+
+    &.button-red {
+        background: $box-red-background ;
+        border-color: $box-red-background ;
+        color: $white;
+
+        &:hover, &:active, &:focus {
+            color: $box-red-background  !important;
+            border-color: $box-red-background;
+            background: transparent !important;
+        }
+        &.button-3, &.button-4 {
+            background: transparent !important;
+            color: $box-red-background !important;
+            border: 1px solid $box-red-background;
+
+            &:hover, &:active, &:focus {
+                border-color: darken($box-red-background, 15%) !important;
+                color: darken($box-red-background, 15%) !important;
+            }
+        }
+    }
+
+    &.button-purple {
+        background: $box-purple-background ;
+        border-color: $box-purple-background ;
+        color: $white;
+
+        &:hover, &:active, &:focus {
+            color: $box-purple-background  !important;
+            border-color: $box-purple-background;
+            background: transparent !important;
+        }
+
+        &.button-3, &.button-4 {
+            background: transparent !important;
+            color: $box-purple-background !important;
+            border: 1px solid $box-purple-background;
+
+            &:hover, &:active, &:focus {
+                border-color: darken($box-purple-background, 15%) !important;
+                color: darken($box-purple-background, 15%) !important;
+            }
+        }
+    }
+
+    &.button-orange {
+        background: $box-orange-background ;
+        border-color: $box-orange-background ;
+        color: $white;
+
+        &:hover, &:active, &:focus {
+            color: $box-orange-background  !important;
+            border-color: $box-orange-background;
+            background: transparent !important;
+        }
+
+        &.button-3, &.button-4 {
+            background: transparent !important;
+            color: $box-orange-background !important;
+            border: 1px solid $box-orange-background;
+
+            &:hover, &:active, &:focus {
+                border-color: darken($box-orange-background, 15%) !important;
+                color: darken($box-orange-background, 15%) !important;
+            }
+        }
+    }
+
+    &.button-blue {
+        background: $box-blue-background ;
+        border-color: $box-blue-background ;
+        color: $white;
+
+        &:hover, &:active, &:focus {
+            color: $box-blue-background  !important;
+            border-color: $box-blue-background;
+            background: transparent !important;
+        }
+
+        &.button-3, &.button-4 {
+            background: transparent !important;
+            color: $box-blue-background !important;
+            border: 2px solid $box-blue-background;
+
+            &:hover, &:active, &:focus {
+                border-color: darken($box-blue-background, 15%) !important;
+                color: darken($box-blue-background, 15%) !important;
+            }
+        }
+    }
+
+    &.button-arrow {
+        position: relative;
+
+        &:before, &:after {
+            font-family: FontAwesome;
+        }
+
+        &:after {
+            .dir-ltr & {
+                content: "\f178";
+                margin-left: 1rem;
+            }
+        }
+
+        &:before {
+            .dir-rtl & {
+                content: "\f177";
+                margin-right: 1rem;
+            }
+        }
+    }
+
+    &.button-special {
+        position: relative;
+
+        &:before {
+            .dir-ltr & {
+                position: absolute;
+                content: "";
+                top: 8px;
+                bottom: -8px;
+                left: -8px;
+                right: 8px;
+                border-left: 1px solid darken($accent-color-1, 8%);
+                border-bottom: 1px solid darken($accent-color-1, 8%);
+            }
+        }
+
+        &:after {
+            .dir-rtl & {
+                position: absolute;
+                content: "";
+                top: 8px;
+                bottom: -8px;
+                right: -8px;
+                left: 8px;
+                border-right: 1px solid darken($accent-color-1, 8%);
+                border-bottom: 1px solid darken($accent-color-1, 8%);
+            }
+        }
+    }
+
+    &.button-outline {
+        color: $white !important;
+        background: transparent;
+        border: 1px solid $white;
+
+        &:before {
+            .dir-ltr & {
+                border-left: 1px solid $white;
+                border-bottom: 1px solid $white;
+            }
+        }
+
+        &:after {
+            .dir-rtl & {
+                border-right: 1px solid $white;
+                border-bottom: 1px solid $white;
+            }
+        }
+
+        &:hover {
+            border: 1px solid $accent-color-1;
+            color: $accent-color-1 !important;
+
+            &:before {
+                .dir-ltr & {
+                    border-left: 1px solid $accent-color-1;
+                    border-bottom: 1px solid $accent-color-1;
+                }
+            }
+
+            &:after {
+                .dir-rtl & {
+                    border-right: 1px solid $accent-color-1;
+                    border-bottom: 1px solid $accent-color-1;
+                }
+            }
+        }
+    }
+
+    &.button-text-only {
+        padding: 0 !important;
+        background: transparent !important;
+        color: $accent-color-1 !important;
+
+        &:hover {
+            color: darken($accent-color-1, 15%);
+        }
+    }
+}

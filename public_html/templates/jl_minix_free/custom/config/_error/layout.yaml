@@ -1,0 +1,63 @@
+version: 2
+preset:
+  image: 'gantry-admin://images/layouts/default.png'
+  name: _error
+  timestamp: 1503514829
+layout:
+  navigation: {  }
+  /container-main/:
+    -
+      -
+        'sidebar 20': {  }
+      -
+        'mainbar 60':
+          -
+            - custom-8525
+          -
+            - system-messages-6091
+          -
+            - system-content-3910
+          -
+            - custom-5592
+      -
+        'aside 20': {  }
+  footer: {  }
+  offcanvas: {  }
+structure:
+  navigation:
+    type: section
+    inherit:
+      outline: default
+      include:
+        - attributes
+        - children
+  sidebar:
+    type: section
+  mainbar:
+    type: section
+  container-main:
+    attributes:
+      boxed: ''
+      class: 'section-horizontal-paddings section-vertical-paddings'
+      extra: {  }
+  footer:
+    inherit:
+      outline: default
+      include:
+        - attributes
+        - children
+  offcanvas:
+    inherit:
+      outline: default
+      include:
+        - attributes
+        - children
+content:
+  custom-8525:
+    title: 'Custom HTML'
+    attributes:
+      html: '<h2 class="error-txt">Sorry!</h2>'
+  custom-5592:
+    title: 'Custom HTML'
+    attributes:
+      html: "IT SEEMS THAT PAGE YOU ARE LOOKING FOR NO LONGER EXISTS.\nPLEASE GO TO HOMEPAGE"

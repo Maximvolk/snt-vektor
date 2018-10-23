@@ -1,0 +1,162 @@
+.flush,
+.g-flushed {
+    > .g-container,
+    > .g-content {
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+}
+
+.g-container-flushed {
+    margin: -4rem 0;
+}
+
+.g-branding {
+    .dir-rtl & {
+      text-align: right;
+      direction: ltr;
+    }
+}
+
+.g-nobackground {
+    background: none !important;
+}
+
+// no(margin/padding)(left/right/top/bottom)
+// (margin/padding)(2x/3x)
+$css_properties: "margin", "padding";
+$css_directions: "left", "right", "top", "bottom", "all";
+$css_multipliers: 2, 3;
+@each $prop in $css_properties {
+    @each $dir in $css_directions {
+        .no#{$prop}#{$dir} {
+            &, > .g-content {
+                @if ($dir != "all") {
+                    #{$prop}-#{$dir}: 0;
+                } @else {
+                    #{$prop}: 0;
+                }
+            }
+        }
+    }
+
+    @each $multi in $css_multipliers {
+        .#{$prop}#{$multi}x {
+            > .g-content {
+                @if ($prop == "padding") {
+                    #{$prop}: $content-padding * $multi;
+                } @else if ($prop == "margin") {
+                    #{$prop}: $content-margin * $multi;
+                }
+            }
+        }
+    }
+}
+
+// Section Horizontal Paddings
+.section-horizontal-paddings {
+    padding-left: 12%;
+    padding-right: 12%;
+
+    @media only all and (max-width: 74.938rem) and (min-width: $breakpoints-tablet-container) {
+        padding-left: 4%;
+        padding-right: 4%;
+    }
+
+    @include breakpoint(tablet-range) {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    @include breakpoint(mobile-only) {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+// Section Vertical Paddings
+.section-vertical-paddings {
+    padding-top: 2vw;
+    padding-bottom: 2vw;
+
+    @include breakpoint(tablet-range) {
+        padding-top: 4vw;
+        padding-bottom: 4vw;
+    }
+
+    .fp-enabled & {
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+
+    .fp-responsive & {
+        padding-top: 2vw;
+        padding-bottom: 2vw;
+
+        @include breakpoint(tablet-range) {
+            padding-top: 4vw;
+            padding-bottom: 4vw;
+        }
+    }
+}
+// Disable Section Paddings
+.no-section-paddings {
+    padding: 0 !important;
+}
+
+.center-block {
+    text-align: center;
+    margin: auto;
+}
+
+.g-center-vertical {
+    @include display(flex);
+    @include align-items(center);
+}
+
+.g-linethrough {
+    text-decoration: line-through;
+    opacity: 0.55;
+}
+
+.g-menuspacer {
+    padding-top: $content-padding * 3;
+    @include breakpoint(mobile-only) {
+        padding: 0;
+    }
+}
+
+.noliststyle {
+    list-style: none;
+}
+
+.g-bold {
+    font-weight: $font-weight-bold;
+}
+
+.g-uppercase {
+    text-transform: uppercase;
+}
+
+.g-compact {
+    .g-container {
+        padding: 0 !important;
+    }
+}
+
+.g-sidebar-offset {
+    margin-top: -4rem;
+}
+
+.g-mobile-center-compact {
+    @include breakpoint(mobile-only) {
+        .g-container {
+            padding: $content-padding 0;
+        }
+
+        .g-content {
+            padding: 0 $content-padding;
+            margin: $content-margin/2 $content-margin;
+            text-align: center !important;
+        }
+    }
+}
