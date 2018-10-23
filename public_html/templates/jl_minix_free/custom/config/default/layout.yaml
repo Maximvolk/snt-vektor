@@ -63,7 +63,7 @@ content:
   custom-2130:
     title: 'Contact Info'
     attributes:
-      html: "<div class=\"contact-ft\">\n  <div class=\"ct-mail\">\n    <a href=\"https://joomlead.com/\">demo@joomlead.com</a>\n  </div>\n  <div class=\"phone\">\n    +8 123 456 789\n  </div>\n</div>\n"
+      html: "<div class=\"contact-ft\">\n  <br>\n  <div class=\"ct-mail\">\n    admin@snt-vektor.ru\n  </div>\n  <div class=\"phone\">\n  </div>\n</div>\n"
   custom-1567:
     title: Link
     attributes:
